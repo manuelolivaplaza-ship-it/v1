@@ -1,0 +1,253 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Sistema de diseño de Traza. Tema claro empresarial sobre los tokens de shadcn/ui:
+ * fondo gris muy claro, barra lateral integrada a ese fondo y el contenido (mapa) dentro de
+ * una tarjeta blanca con borde. Usa SIEMPRE los tokens (bg-card, text-muted-foreground,
+ * border-border, text-late-ink, bg-ok-soft…) en vez de colores sueltos.
+ */
+
+@theme inline {
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --font-heading: var(--font-sans);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+
+  /* Estados de la operación. `-ink` = texto legible sobre blanco, `-soft` = fondo suave. */
+  --color-ok: var(--ok);
+  --color-ok-ink: var(--ok-ink);
+  --color-ok-soft: var(--ok-soft);
+  --color-warn: var(--warn);
+  --color-warn-ink: var(--warn-ink);
+  --color-warn-soft: var(--warn-soft);
+  --color-late: var(--late);
+  --color-late-ink: var(--late-ink);
+  --color-late-soft: var(--late-soft);
+  --color-halt: var(--halt);
+  --color-halt-ink: var(--halt-ink);
+  --color-halt-soft: var(--halt-soft);
+  --color-sched: var(--sched);
+  --color-sched-ink: var(--sched-ink);
+  --color-sched-soft: var(--sched-soft);
+  --color-info: var(--info);
+  --color-info-ink: var(--info-ink);
+  --color-info-soft: var(--info-soft);
+
+  --shadow-float: 0 1px 2px rgb(16 24 40 / 0.04), 0 8px 24px -4px rgb(16 24 40 / 0.1);
+  --shadow-card: 0 1px 2px rgb(16 24 40 / 0.04);
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:root {
+  --radius: 0.75rem;
+
+  /* Superficie principal: la tarjeta blanca donde vive el mapa. */
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.21 0.005 260);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.21 0.005 260);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.21 0.005 260);
+  --primary: oklch(0.21 0.005 260);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.968 0.002 260);
+  --secondary-foreground: oklch(0.21 0.005 260);
+  --muted: oklch(0.968 0.002 260);
+  --muted-foreground: oklch(0.5 0.01 260);
+  --accent: oklch(0.955 0.003 260);
+  --accent-foreground: oklch(0.21 0.005 260);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.915 0.003 260);
+  --input: oklch(0.9 0.003 260);
+  --ring: oklch(0.7 0.01 260);
+
+  --chart-1: oklch(0.6 0.2 262);
+  --chart-2: oklch(0.65 0.17 155);
+  --chart-3: oklch(0.78 0.16 75);
+  --chart-4: oklch(0.63 0.22 25);
+  --chart-5: oklch(0.55 0.02 260);
+
+  /* Barra lateral: el fondo gris que rodea a la tarjeta del mapa. */
+  --sidebar: oklch(0.972 0.002 260);
+  --sidebar-foreground: oklch(0.21 0.005 260);
+  --sidebar-primary: oklch(0.21 0.005 260);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.93 0.004 260);
+  --sidebar-accent-foreground: oklch(0.21 0.005 260);
+  --sidebar-border: oklch(0.915 0.003 260);
+  --sidebar-ring: oklch(0.7 0.01 260);
+
+  /* Estados (iguales a STATE_COLOR en src/lib/labels.ts) */
+  --ok: #1fa971;
+  --ok-ink: #12794f;
+  --ok-soft: #e7f6ef;
+  --warn: #f5a524;
+  --warn-ink: #9a5b00;
+  --warn-soft: #fff3dc;
+  --late: #e5484d;
+  --late-ink: #c0282e;
+  --late-soft: #fdeced;
+  --halt: #64748b;
+  --halt-ink: #475569;
+  --halt-soft: #eef1f5;
+  --sched: #7c8db5;
+  --sched-ink: #4d5d85;
+  --sched-soft: #eef1f8;
+  --info: #3b82f6;
+  --info-ink: #1d4ed8;
+  --info-soft: #eaf1fe;
+}
+
+/* El producto es solo claro; el bloque oscuro de shadcn queda por si se activa más adelante. */
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html,
+  body {
+    height: 100%;
+    overflow: hidden;
+    @apply bg-sidebar text-foreground font-sans;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection {
+    background: oklch(0.85 0.08 262 / 0.5);
+  }
+}
+
+/* Panel flotante sobre el mapa: blanco translúcido con borde fino y sombra suave. */
+@utility glass {
+  background: rgb(255 255 255 / 0.88);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-float);
+}
+
+/* Números que no bailan al cambiar (relojes, ETA, velocidades). */
+@utility tabular {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+/* Etiqueta pequeña en mayúsculas para títulos de sección. */
+@utility eyebrow {
+  font-size: 0.6875rem;
+  line-height: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+
+/* Barra de desplazamiento discreta para listas dentro de paneles. */
+@utility scroll-thin {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(0 0 0 / 0.16) transparent;
+}
+
+/* Mapbox: atribución y logo discretos, sobre mapa claro. */
+.mapboxgl-ctrl-logo {
+  opacity: 0.6;
+}
+.mapboxgl-ctrl-attrib {
+  background: transparent !important;
+  color: var(--muted-foreground);
+  font-size: 10px;
+}
+.mapboxgl-ctrl-attrib a {
+  color: var(--muted-foreground) !important;
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

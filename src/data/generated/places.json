@@ -1,0 +1,123 @@
+[
+  {
+    "id": "cd-quilicura",
+    "name": "Centro de Distribución Quilicura",
+    "shortName": "CD Quilicura",
+    "kind": "depot",
+    "coord": [
+      -70.735176,
+      -33.358498
+    ],
+    "radiusM": 700
+  },
+  {
+    "id": "cd-pudahuel",
+    "name": "Centro de Distribución Pudahuel",
+    "shortName": "CD Pudahuel",
+    "kind": "depot",
+    "coord": [
+      -70.778871,
+      -33.403185
+    ],
+    "radiusM": 700
+  },
+  {
+    "id": "cd-san-bernardo",
+    "name": "Centro de Distribución San Bernardo",
+    "shortName": "CD San Bernardo",
+    "kind": "depot",
+    "coord": [
+      -70.725019,
+      -33.632088
+    ],
+    "radiusM": 700
+  },
+  {
+    "id": "puerto-san-antonio",
+    "name": "Puerto de San Antonio",
+    "shortName": "San Antonio",
+    "kind": "port",
+    "coord": [
+      -71.612923,
+      -33.593004
+    ],
+    "radiusM": 1300
+  },
+  {
+    "id": "puerto-valparaiso",
+    "name": "Puerto de Valparaíso",
+    "shortName": "Valparaíso",
+    "kind": "port",
+    "coord": [
+      -71.628648,
+      -33.035978
+    ],
+    "radiusM": 1300
+  },
+  {
+    "id": "los-andes",
+    "name": "Puerto Terrestre Los Andes",
+    "shortName": "Los Andes",
+    "kind": "city",
+    "coord": [
+      -70.620198,
+      -32.850025
+    ],
+    "radiusM": 1500
+  },
+  {
+    "id": "paso-libertadores",
+    "name": "Complejo Fronterizo Los Libertadores",
+    "shortName": "Paso Los Libertadores",
+    "kind": "border",
+    "coord": [
+      -70.092205,
+      -32.827048
+    ],
+    "radiusM": 2000
+  },
+  {
+    "id": "mendoza",
+    "name": "Mendoza, Argentina",
+    "shortName": "Mendoza",
+    "kind": "city",
+    "coord": [
+      -68.845805,
+      -32.889463
+    ],
+    "radiusM": 2000
+  },
+  {
+    "id": "rancagua",
+    "name": "Rancagua",
+    "shortName": "Rancagua",
+    "kind": "city",
+    "coord": [
+      -70.736662,
+      -34.165247
+    ],
+    "radiusM": 1500
+  },
+  {
+    "id": "talca",
+    "name": "Talca",
+    "shortName": "Talca",
+    "kind": "city",
+    "coord": [
+      -71.647865,
+      -35.428005
+    ],
+    "radiusM": 1500
+  },
+  {
+    "id": "la-serena",
+    "name": "La Serena",
+    "shortName": "La Serena",
+    "kind": "city",
+    "coord": [
+      -71.249984,
+      -29.910007
+    ],
+    "radiusM": 1500
+  }
+]

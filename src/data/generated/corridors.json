@@ -1,0 +1,56 @@
+[
+  {
+    "id": "ruta-78",
+    "name": "Ruta 78",
+    "label": "Autopista del Sol",
+    "hotspot": [
+      -71.074124,
+      -33.683267
+    ]
+  },
+  {
+    "id": "ruta-68",
+    "name": "Ruta 68",
+    "label": "Santiago – Valparaíso",
+    "hotspot": [
+      -71.255613,
+      -33.390798
+    ]
+  },
+  {
+    "id": "ruta-57",
+    "name": "Ruta 57",
+    "label": "Autopista Los Libertadores",
+    "hotspot": [
+      -70.68901,
+      -33.1084
+    ]
+  },
+  {
+    "id": "paso-libertadores",
+    "name": "Ruta 60",
+    "label": "Paso Los Libertadores",
+    "hotspot": [
+      -70.072096,
+      -32.805373
+    ]
+  },
+  {
+    "id": "ruta-5-sur",
+    "name": "Ruta 5 Sur",
+    "label": "Santiago – Talca",
+    "hotspot": [
+      -70.734434,
+      -33.900522
+    ]
+  },
+  {
+    "id": "ruta-5-norte",
+    "name": "Ruta 5 Norte",
+    "label": "Santiago – La Serena",
+    "hotspot": [
+      -70.98606,
+      -32.844257
+    ]
+  }
+]
